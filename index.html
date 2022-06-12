@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolosalon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="container pb-4" id="wrapper">
+        <div class="container text-center">
+            <h1 class="p-5 fst-italic text-decoration-underline">Kolosalon - pujcovna kol</h1>
+        </div>
+        <form name="f1" id="form1">
+        <div class="container text-center">
+            <h2 class="p-3">Vyber kolo:</h2>
+            <div class="row">
+                <div class="col-md-3 p-4">
+                    <div class="card">
+                        <img src="images/1.jpg" class="card-img-top img-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title">Horske kolo</h5>
+                            <p class="card-text">K zapujceni za 1200kc/den</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="cenaH" value="1200" id="flexCheckDefault">
+                                <input class="poc rounded-3" type="number" name="mnozstviH" value="1" min="1" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-4">
+                    <div class="card">
+                        <img src="images/2.jpg" class="card-img-top img-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title">Retro kolo</h5>
+                            <p class="card-text">K zapujceni za 1000kc/den</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="cenaR" value="1000" id="flexCheckDefault">
+                                <input class="poc rounded-3" type="number" name="mnozstviR" value="1" min="1" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-4">
+                    <div class="card">
+                        <img src="images/3.jpg" class="card-img-top img-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title">Mestske kolo</h5>
+                            <p class="card-text">K zapujceni za 800kc/den</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="cenaM" value="800" id="flexCheckDefault">
+                                <input class="poc rounded-3" type="number" value="1" name="mnozstviM" min="1" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-4">
+                    <div class="card">
+                        <img src="images/4.jpg" class="card-img-top img-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title">Detske kolo</h5>
+                            <p class="card-text">K zapujceni za 500kc/den</p>
+                            <div class="form-check" name="detske">
+                                <input class="form-check-input" type="checkbox" name="cenaD" value="500" id="flexCheckDefault">
+                                <input class="poc rounded-3" type="number" value="1" name="mnozstviD" min="1" style="width: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+        <form name="f2" id="form2">
+        <div class="container text-center mt-4 pb-3" id="nosicPlusDoba">
+            <div class="row">
+                <div class="col-md-4 flex-column">
+                    <h2 class="p-3">Doba zapujceni:</h2>
+                    <select class="form-select" size="1" name="doba" aria-label="size 3 select example">
+                        <option selected value="1">1 den</option>
+                        <option value="3">3 dny</option>
+                        <option value="7">7 dni</option>
+                        <option value="14">14 dni</option>
+                    </select>
+                </div>
+                <div class="col-md-8 flex-column">
+                    <h2 class="p-3">Budete potrebovat i cyklonosic?</h2>
+                    <div class="form-check d-flex flex-column align-items-start">
+                        <div>
+                            <input class="form-check-input" value="1.05" type="radio" name="nosic">
+                                &nbsp;Stresni cyklonosic (+5% z celkove ceny)
+                        </div>
+                        <div>
+                            <input class="form-check-input" value="1.1" type="radio" name="nosic">
+                                &nbsp;Cyklonosic na tazne zarizeni (+10% z celkove ceny)
+                        </div>
+                        <div>
+                            <input class="form-check-input" checked value="1" type="radio" name="nosic">
+                                &nbsp;Bez cyklonosice
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-5 my-3">
+                <div class="col-md-3">
+                    <p>Kolik jste ochotni zaplatit?</p>
+                    <p class="rozsudek"></p>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">CZK</span>
+                        <input type="number" class="form-control" name="predstava" placeholder="Zadej castku" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="suma">0kc</p>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" onclick="spocitej()" class="btn btn-secondary mb-2" id="tlac">&nbsp;Zobraz aktualni cenu</button>
+                    <button type="button" value="reset" onclick="vycisti()" class="btn btn-secondary" id="tlac3">&nbsp;Reset</button>
+                </div>
+            </div>
+            <div class="row pb-5 mt-2">
+                <div class="col-md-3">
+                    Zadej email:
+                </div>  
+                <div class="col-md-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="email" name="mail" class="form-control" placeholder="Zadej platny email" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="msg"></p>
+                </div>  
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-secondary" onclick="odesli()" id="tlac2">&nbsp;Odeslat</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
